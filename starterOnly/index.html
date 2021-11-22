@@ -49,9 +49,13 @@
 
     <div class="bground">
       <div class="content">
-        <span class="close"></span>
+        <span class="close close-event"></span>
         <div class="modal-body">
-          <form name="reserve" action="index.html" method="get" onsubmit="return validate();" novalidate>
+          <div class="modal-alert">
+            <h2 class="success-msg">Merci ! Votre réservation a bien été reçue.</h2>
+            <div class="button close-event">Fermer</div>
+          </div>
+          <form name="reserve" action="index.html" method="get" onsubmit="return validate(event);" novalidate>
             <div class="formData">
               <label for="first">Prénom</label><br>
               <input class="text-control" type="text" id="first" name="first" minlength="2" required /><br>

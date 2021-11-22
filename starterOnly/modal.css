@@ -136,6 +136,44 @@ main {
   font-family: var(--font-slab);
 }
 
+/* Success message */
+
+.modal-alert {
+  position: absolute;
+  display: none;
+  padding: 25px 8%;
+  bottom:0;
+  left:0;
+  text-align: center;
+  width: 100%;
+}
+
+.alert-fadein {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: stretch;
+  align-items: center;
+  height: 60%;
+}
+
+.success-msg {
+  opacity: 1;
+  animation: fadein .3s ease-in-out both;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+    transform: translateY(-25%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Modal form */
 
 .button {
@@ -185,6 +223,16 @@ main {
 .modal-body {
   padding: 15px 8%;
   margin: 15px auto;
+  min-height: 80vh;
+}
+
+.form-fadeout {
+  transition: opacity .3s ease-in-out;
+  opacity:0;
+}
+
+.form-hidden {
+  display: none;
 }
 
 label {
@@ -313,6 +361,9 @@ input {
 }
 .close:after {
   transform: rotate(-45deg);
+}
+.clos-event {
+  cursor: pointer;
 }
 .btn-submit,
 .btn-signup {
