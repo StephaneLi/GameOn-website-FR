@@ -7,11 +7,27 @@ function editNav() {
   }
 }
 
+function validRadioCity () {  
+  let validCity = false;
+  
+  cityCheckbox.forEach((elmnt) => {
+    // if 1 element is checked return true
+    if (elmnt.checked) {
+      validCity = true;
+    }
+  });
+  return validCity;
+}
+
 // DOM Elements
 const modalbg = document.querySelector(".bground");
-const modalClose = document.querySelector('.close')
+const modalClose = document.querySelector('.close');
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
+
+// DOM Forms inputs
+const cityCheckbox = document.querySelectorAll('#select-city .checkbox-input');
+
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -24,4 +40,17 @@ function launchModal() {
 
 function closeModal() {
   modalbg.style.display = "none";
+}
+
+// validate modal form
+function validate() {
+  // All label are controlled by HTML5 validate rules
+  // Check if 1 radio is selected
+  const validRadio = validRadioCity();
+
+  if(validRadio) {
+    return true;
+  } else {
+    return false;
+  }
 }
