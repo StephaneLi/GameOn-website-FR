@@ -5,15 +5,17 @@
   <meta charset="utf-8" />
   <title>GameOn</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="stylesheet" href="modal.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href="https://fonts.googleapis.com/css?family=DM+Sans" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css" />
 </head>
 
 <body>
   <header class="topnav" id="myTopnav">
     <div class="header-logo">
-      <img alt="logo" src="Logo.png" />
+      <img alt="GameOn" src="./images/Logo.png" />
     </div>
     <div class="toggle-nav">
       <a href="javascript:void(0);" class="icon" onclick="editNav()">
@@ -22,8 +24,7 @@
     </div>
     <nav class="main-navbar">
       <ul>
-        <li><a href="#" class="active"><span>Accueil</span></a></li>
-        <li><a href="#"><span>Détails de l'évènement</span></a></li>
+        <li><a href="#" class="active"><span>Détails de l'évènement</span></a></li>
         <li><a href="#"><span>À propos</span></a></li>
         <li><a href="#"><span>Contact</span></a></li>
         <li><a href="#"><span>Évènements passés</span></a></li>
@@ -42,9 +43,9 @@
         <button class="button btn-signup modal-btn">Je m'inscris</button>
       </div>
       <div class="hero-img">
-        <img src="./bg_img.jpg" alt="GameOn Marathon national de jeux vidéos" />
+        <img src="./images/bg_img.jpg" alt="GameOn Marathon national de jeux vidéos" />
       </div>
-      <button  class="button btn-signup modal-btn">Je m'inscris</button>
+      <button class="button btn-signup modal-btn">Je m'inscris</button>
     </section>
     <section class="bground">
       <div class="content">
@@ -75,18 +76,12 @@
               <label>À combien de tournois GameOn avez-vous déjà participé ?</label><br>
               <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99" required>
             </div>
-            <div id="select-city">             
+            <div id="select-city">
               <div class="formData" data-error="Vous devez choisir une option." data-error-visible="false">
                 <p class="text-label">Quelles villes ?</p>
               </div>
               <div class="select-city-item">
-                <input 
-                  class="checkbox-input" 
-                  type="checkbox" 
-                  id="location1" 
-                  name="location1" 
-                  value="New York" 
-                />
+                <input class="checkbox-input" type="checkbox" id="location1" name="location1" value="New York" />
                 <label class="checkbox-label" for="location1">
                   <span class="checkbox-icon"></span>
                   New York</label
@@ -172,20 +167,16 @@
                   <span class="checkbox-icon"></span>
                   J'ai lu et accepté les conditions d'utilisation.
                 </label><br>
-                <input 
-                  class="checkbox-input" 
-                  type="checkbox" 
-                  id="checkbox2"
-                />
+                <input class="checkbox-input" type="checkbox" id="checkbox2" />
                 <label class="checkbox2-label" for="checkbox2">
                     <span class="checkbox-icon"></span>
                     Je souhaite être prévenu des prochains évènements.
                 </label><br>
               </div>
-            <input class="button btn-submit" type="submit" value="C'est parti" />
+              <input class="button btn-submit" type="submit" value="C'est parti" />
           </form>
+          </div>
         </div>
-      </div>
     </section>
   </main>
   <footer>
@@ -193,7 +184,7 @@
       Copyright 2014 - 2020, GameOn Inc.
     </p>
   </footer>
-  <script src="modal.js"></script>
+  <script type="text/javascript" src="./js/main.js"></script>
 </body>
 
 </html>
