@@ -188,15 +188,9 @@ function validate(event) {
   listInputsRequired.forEach(function (elmnt) {
     if( elmnt.valid === false ) {
       addInputError(elmnt.node, elmnt.msg);
+      isValidForm = false;
     } else {
       removeInputError(elmnt.node);
-    }
-  })
-
-  // find if add error in required inputs list 
-  listInputsRequired.find(function (elmnt) {
-    if(elmnt.valid === false) {
-      isValidForm = false;
     }
   })
 
@@ -204,6 +198,7 @@ function validate(event) {
   // send formData with XMLHttpRequest
   if(isValidForm) {
     modalForm.classList.add("form-fadeout");
+    // Show Success message
     const timer1 = setTimeout(function() {
       modalForm.classList.add("form-hidden");
       modalForm.classList.remove("form-fadeout");
@@ -211,6 +206,7 @@ function validate(event) {
       clearTimeout(timer1);
     }, 300)
     formIsSend = true;
+    // Send datas with FormData
     sendData();
   }
   

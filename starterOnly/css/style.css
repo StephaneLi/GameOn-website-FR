@@ -11,7 +11,7 @@
 }
 
 
-/* Landing Page */
+/* Base */
 
 body {
   display: flex;
@@ -32,6 +32,27 @@ img {
   padding-right: 1rem;
 }
 
+main {
+  font-size: 130%;
+  font-weight: bolder;
+  color: black;
+  padding-top: 0.5vw;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  margin: 0 20px;
+  border-radius: 2rem;
+  text-align: justify;
+  height: 50%;
+  flex: 1 1 auto;
+}
+
+.footer {
+  margin: 20px;
+  padding: 10px;
+  font-family: var(--font-slab);
+}
+
+/* Header */
 .topnav {
   position: relative;
   width: 100%;
@@ -105,6 +126,7 @@ img {
   background-color: transparent;
 }
 
+/* Modal */
 .modal-btn {
   font-size: 145%;
   background: #fe142f;
@@ -121,28 +143,7 @@ img {
   background: #3876ac;
 }
 
-main {
-  font-size: 130%;
-  font-weight: bolder;
-  color: black;
-  padding-top: 0.5vw;
-  padding-left: 2vw;
-  padding-right: 2vw;
-  margin: 0 20px;
-  border-radius: 2rem;
-  text-align: justify;
-  height: 50%;
-  flex: 1 1 auto;
-}
-
-.footer {
-  margin: 20px;
-  padding: 10px;
-  font-family: var(--font-slab);
-}
-
-
-/* Success message */
+/* Modal alert */
 
 .modal-alert {
   position: absolute;
@@ -252,6 +253,12 @@ input {
   border-radius: 8px;
   font-size: 20px;
   height: 48px;
+}
+
+.text-label {
+  font-weight: normal;
+  font-size: 16px;
+  padding: 0;
 }
 
 .formData[data-error]::after {
@@ -379,10 +386,6 @@ input {
   transform: rotate(-45deg);
 }
 
-.clos-event {
-  cursor: pointer;
-}
-
 .btn-submit,
 .btn-signup {
   background: #fe142f;
@@ -396,9 +399,6 @@ input {
   cursor: pointer;
   border: 0;
 }
-
-
-/* custom select styles */
 
 .custom-select {
   position: relative;
@@ -493,14 +493,9 @@ input {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-
 /* custom select end */
 
-.text-label {
-  font-weight: normal;
-  font-size: 16px;
-  padding: 0;
-}
+/* Box components hero section*/
 
 .hero-section {
   border-radius: 10px;
@@ -570,6 +565,8 @@ input {
   padding: 0;
 }
 
+/* footer content */
+
 .copyrights {
   color: #fe142f;
   padding: 0;
@@ -585,6 +582,8 @@ input {
 footer {
   margin: 0 20px;
 }
+
+/* responsive Breakpoitn ( 540px / 720px / 992px ) */
 
 @media screen and (max-width: 540px) {
   .topnav {
@@ -713,6 +712,8 @@ footer {
     margin-top: 37px;
   }
 }
+
+/* Keyframes animations */
 
 @keyframes modalopen {
   from {
