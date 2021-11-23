@@ -53,15 +53,23 @@ function closeModal() {
 }
 
 // function add data attributes
-function addInputError (formData, msg) {
-  formData.parentNode.dataset.errorVisible = true;
-  formData.parentNode.dataset.error = msg;
+function addInputError (node) {
+  if(node.parentNode.classList.value === 'formData') {
+    node.parentNode.dataset.errorVisible = true;
+  } else {
+    // find formData case check cities 
+    node.parentNode.parentNode.querySelector('.formData').dataset.errorVisible = true;
+  }
 }
 
 // function remove data attributes
-function removeInputError (formData) {
-  delete formData.parentNode.dataset.errorVisible;
-  delete formData.parentNode.dataset.error;
+function removeInputError (node) {
+  if(node.parentNode.classList.value === 'formData') {
+    node.parentNode.dataset.errorVisible = false;
+  } else {
+    // find formData case check cities 
+    node.parentNode.parentNode.querySelector('.formData').dataset.errorVisible = false;
+  }
 }
 
 // function check if 1 radio is selected
@@ -167,13 +175,13 @@ function validate(event) {
   // Init objects list with inputs elements and error messages 
   // Double verification : HTML and Javascript
   const listInputsRequired = [
-    { node: firstnameInput, msg: "Veuillez entrer 2 caractères ou plus pour le champ du prénom.", valid: checkInputChar(firstnameInput, 2) },
-    { node: lastnameInput, msg: "Veuillez entrer 2 caractères ou plus pour le champ du nom.", valid: checkInputChar(lastnameInput, 2) },
-    { node: emailInput, msg: "Veuillez saisir une adresse mail valide.", valid: checkInputRegex(emailInput, /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/) },
-    { node: birthdateInput, msg: "Vous devez entrer votre date de naissance.", valid: checkInputRegex(birthdateInput, /^\d{4}[./-]\d{2}[./-]\d{2}$/) },
-    { node: quantityInput, msg: "Veuillez renseigner un chiffre entre 0 et 99.", valid: checkInputNumber(quantityInput) },
-    { node: citiesCheckbox[0], msg: "Vous devez choisir une option.", valid: validRadioCity(citiesCheckbox) },
-    { node: rules, msg: "Vous devez vérifier que vous acceptez les termes et conditions.", valid: checkInputCheckbox(rules) }
+    { node: firstnameInput, valid: checkInputChar(firstnameInput, 2) },
+    { node: lastnameInput, valid: checkInputChar(lastnameInput, 2) },
+    { node: emailInput, valid: checkInputRegex(emailInput, /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/) },
+    { node: birthdateInput, valid: checkInputRegex(birthdateInput, /^\d{4}[./-]\d{2}[./-]\d{2}$/) },
+    { node: quantityInput, valid: checkInputNumber(quantityInput) },
+    { node: citiesCheckbox[0], valid: validRadioCity(citiesCheckbox) },
+    { node: rules, valid: checkInputCheckbox(rules) }
   ];
 
   // Add or Remove data-error attributes
