@@ -1,5 +1,5 @@
 function editNav() {
-  var x = document.getElementById("myTopnav");
+  let x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
     x.className += " responsive";
   } else {
@@ -94,13 +94,13 @@ function checkInputChar (elmnt, minChar) {
   
   // Check JS Valid
   if( elmnt.value.length >= minChar) { 
-    validJs = true
+    validJs = true;
   }
 
   if(validJs && validHtml) {
-    return true
+    return true;
   } else {
-    return false
+    return false;
   }
 }
 
@@ -112,13 +112,13 @@ function checkInputRegex (elmnt, regex) {
 
   // Check JS Valid Regex and not empty
   if ( elmnt.value.length >= 0 && regex.test(elmnt.value)) { 
-    validJs = true
+    validJs = true;
   }
 
   if (validJs && validHtml) {
-    return true
+    return true;
   } else {
-    return false
+    return false;
   }
 }
 
@@ -130,13 +130,13 @@ function checkInputNumber (elmnt) {
 
   // Check JS Valid Regex and not empty
   if (Number.isInteger(parseInt(elmnt.value))) { 
-    validJs = true
+    validJs = true;
   }
 
   if (validJs && validHtml) {
-    return true
+    return true;
   } else {
-    return false
+    return false;
   }
 }
 
@@ -227,7 +227,7 @@ function validate(event) {
   // Add or Remove data-error attributes
   listInputsRequired.forEach(function (elmnt) {
     if( elmnt.valid === false ) {
-      addInputError(elmnt.node, elmnt.msg);
+      addInputError(elmnt.node);
       isValidForm = false;
     } else {
       removeInputError(elmnt.node);
