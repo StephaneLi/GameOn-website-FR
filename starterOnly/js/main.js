@@ -140,6 +140,46 @@ function checkInputNumber (elmnt) {
   }
 }
 
+// function check Date of birth ( not empty && valid format && more than 18 years )
+function checkInputAge (elmnt) {
+  // check input value is completed with valid format
+  const validHtml = elmnt.validity.valid;
+  let validJs;
+
+  if (!elmnt.value || !validHtml) {    
+    // input is not completed
+    elmnt.parentNode.dataset.error = "Vous devez entrer votre date de naissance.";
+    validJs = false;
+  } else if (!checkInputRegex(elmnt, /^\d{4}[./-]\d{2}[./-]\d{2}$/)){
+    // input error format
+    elmnt.parentNode.dataset.error = "Veuillez saisir une date valide.";
+    validJs = false;
+  } else {
+    /*** calculate age ***/
+    // create date from input value
+    const birthDate = new Date(elmnt.value);
+    // calculate month difference from current date in time
+    const diff = Date.now()- birthDate.getTime();
+    // convert the calculated difference in date format
+    const ageDt = new Date(diff);
+    // extract year from date  
+    const ageYear = ageDt.getUTCFullYear();
+    // now calculate the age of the user
+    const age = Math.abs(ageYear - 1970);
+
+    if(age < 18) {
+      // input is completed but uer have less than 18 years
+      elmnt.parentNode.dataset.error = "Vous avez moins de 18 ans, vous ne pouvez pas vous inscrire.";
+      validJs = false;
+    } else {
+      // input is completed and uer have more than 18 years
+      validJs = true;
+    }    
+  }
+
+  return validJs;
+}
+
 // function check checkbox 
 function checkInputCheckbox (elmnt) {
   let validJs = elmnt.checked;
@@ -178,7 +218,7 @@ function validate(event) {
     { node: firstnameInput, valid: checkInputChar(firstnameInput, 2) },
     { node: lastnameInput, valid: checkInputChar(lastnameInput, 2) },
     { node: emailInput, valid: checkInputRegex(emailInput, /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/) },
-    { node: birthdateInput, valid: checkInputRegex(birthdateInput, /^\d{4}[./-]\d{2}[./-]\d{2}$/) },
+    { node: birthdateInput, valid: checkInputAge(birthdateInput) },
     { node: quantityInput, valid: checkInputNumber(quantityInput) },
     { node: citiesCheckbox[0], valid: validRadioCity(citiesCheckbox) },
     { node: rules, valid: checkInputCheckbox(rules) }
