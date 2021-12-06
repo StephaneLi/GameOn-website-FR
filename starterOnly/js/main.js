@@ -24,7 +24,7 @@ const emailInput = document.querySelector('#email');
 const birthdateInput = document.querySelector('#birthdate');
 const quantityInput = document.querySelector('#quantity');
 const rules = document.querySelector('#checkbox1');
-const citiesCheckbox = document.querySelectorAll('#select-city .checkbox-input');
+const citiesCheckbox = document.querySelectorAll('#select-city .radio-input');
 
 // Form is send
 let formIsSend = false;
