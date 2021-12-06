@@ -12,7 +12,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon/favicon-16x16.png">
-  <link rel="manifest" href="./images/favicon/site.webmanifest">
+  <link rel="manifest" href="images/favicon/site.webmanifest">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -87,10 +87,16 @@
             <div id="select-city">
               <div class="formData" data-error="Vous devez choisir une option." data-error-visible="false">
                 <p class="text-label">Quelles villes ?</p>
-              </div>
+              </div>              
               <div class="select-city-item">
-                <input class="checkbox-input" type="checkbox" id="location1" name="location1" value="New York" />
-                <label class="checkbox-label" for="location1">
+                <input 
+                  class="checkbox-input"
+                  type="radio"
+                  id="new-york"
+                  name="location" 
+                  value="New York" 
+                />
+                <label class="checkbox-label" for="new-york">
                   <span class="checkbox-icon"></span>
                   New York</label
                 >
@@ -98,38 +104,38 @@
               <div class="select-city-item">
                 <input
                   class="checkbox-input"
-                  type="checkbox"
-                  id="location2"
-                  name="location2"
+                  type="radio"
+                  id="san-francisco"
+                  name="location"
                   value="San Francisco"
                 />
-                <label class="checkbox-label" for="location2">
+                <label class="checkbox-label" for="san-francisco">
                   <span class="checkbox-icon"></span>
                   San Francisco</label
                 >
-                </div>
+              </div>
               <div class="select-city-item">
                 <input
                   class="checkbox-input"
-                  type="checkbox"
-                  id="location3"
-                  name="location3"
+                  type="radio"
+                  id="seattle"
+                  name="location"
                   value="Seattle"
                 />
-                <label class="checkbox-label" for="location3">
+                <label class="checkbox-label" for="seattle">
                   <span class="checkbox-icon"></span>
                   Seattle</label
                 >
-                </div>
+              </div>
               <div class="select-city-item">
                 <input
                   class="checkbox-input"
-                  type="checkbox"
-                  id="location4"
-                  name="location4"
+                  type="radio"
+                  id="chicago"
+                  name="location"
                   value="Chicago"
                 />
-                <label class="checkbox-label" for="location4">
+                <label class="checkbox-label" for="chicago">
                   <span class="checkbox-icon"></span>
                   Chicago</label
                 >
@@ -137,51 +143,49 @@
               <div class="select-city-item">
                 <input
                   class="checkbox-input"
-                  type="checkbox"
-                  id="location5"
-                  name="location5"
+                  type="radio"
+                  id="boston"
+                  name="location"
                   value="Boston"
                 />
-                <label class="checkbox-label" for="location5">
+                <label class="checkbox-label" for="boston">
                   <span class="checkbox-icon"></span>
                   Boston</label
                 >
-                </div>
-
-                <div class="select-city-item">
+              </div>
+              <div class="select-city-item">
                 <input
                   class="checkbox-input"
-                  type="checkbox"
-                  id="location6"
-                  name="location6"
+                  type="radio"
+                  id="portland"
+                  name="location"
                   value="Portland"
                 />
-                <label class="checkbox-label" for="location6">
+                <label class="checkbox-label" for="portland">
                   <span class="checkbox-icon"></span>
                   Portland</label
-                >
-                </div>
+                >                
               </div>
-
-              <div class="formData" data-error="Vous devez vérifier que vous acceptez les termes et conditions." data-error-visible="false">
-                <input
-                  class="checkbox-input"
-                  type="checkbox"
-                  id="checkbox1"
-                  checked
-                  required
-                />
-                <label class="checkbox2-label" for="checkbox1">
+            </div>
+            <div class="formData" data-error="Vous devez vérifier que vous acceptez les termes et conditions." data-error-visible="false">
+              <input
+                class="checkbox-input"
+                type="checkbox"
+                id="checkbox1"
+                checked
+                required
+              />
+              <label class="checkbox2-label" for="checkbox1">
+                <span class="checkbox-icon"></span>
+                J'ai lu et accepté les conditions d'utilisation.
+              </label><br>
+              <input class="checkbox-input" type="checkbox" id="checkbox2" />
+              <label class="checkbox2-label" for="checkbox2">
                   <span class="checkbox-icon"></span>
-                  J'ai lu et accepté les conditions d'utilisation.
-                </label><br>
-                <input class="checkbox-input" type="checkbox" id="checkbox2" />
-                <label class="checkbox2-label" for="checkbox2">
-                    <span class="checkbox-icon"></span>
-                    Je souhaite être prévenu des prochains évènements.
-                </label><br>
-              </div>
-              <input class="button btn-submit" type="submit" value="C'est parti" />
+                  Je souhaite être prévenu des prochains évènements.
+              </label><br>
+            </div>
+            <input class="button btn-submit" type="submit" value="C'est parti" />
           </form>
           </div>
         </div>
@@ -192,7 +196,7 @@
       Copyright 2014 - 2020, GameOn Inc.
     </p>
   </footer>
-  <script type="text/javascript" src="./js/main.js"></script>
+  <script src="./js/main.js"></script>
 </body>
 
 </html>

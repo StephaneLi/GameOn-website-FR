@@ -62,7 +62,6 @@ main {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 30px;
   margin: 3.5% 0;
   padding: 0 20px;
   z-index: 1;
@@ -221,7 +220,7 @@ main {
 .modal-body {
   padding: 15px 8%;
   margin: 15px auto;
-  min-height: 80vh;
+  min-height: 85vh;
 }
 
 .form-fadeout {
@@ -265,12 +264,10 @@ input {
 .formData[data-error]::after {
   content: attr(data-error);
   font-size: 0.4em;
+  line-height: 1.6em!important;
   color: #e54858;
   display: block;
-  margin-top: 7px;
-  margin-bottom: 7px;
   text-align: left;
-  line-height: 0.3;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
 }
@@ -291,6 +288,7 @@ input {
   line-height: 20px;
   white-space: inherit;
   font-weight: normal;
+  cursor: pointer;
 }
 
 .checkbox-label .checkbox-icon,
@@ -398,6 +396,7 @@ input {
   color: #fff;
   cursor: pointer;
   border: 0;
+  white-space: nowrap;
 }
 
 .custom-select {
@@ -514,7 +513,6 @@ input {
   color: #fff;
   position: relative;
   text-align: left;
-  min-width: 424px;
 }
 
 .hero-content::after {
@@ -539,7 +537,8 @@ input {
 }
 
 .hero-text {
-  width: 146%;
+  width: 160%;
+  min-width: 210px;
   font-weight: normal;
   margin-top: 57px;
   padding: 0;
@@ -550,7 +549,7 @@ input {
   font-size: 1.3rem;
   padding: 10px 23px;
   margin: 0;
-  margin-top: 59px;
+  margin-top: 40px;
 }
 
 .hero-img {
@@ -586,6 +585,12 @@ footer {
 /* responsive Breakpoitn ( 540px / 720px / 992px ) */
 
 @media screen and (max-width: 540px) {
+  html {
+    font-size: 0.9rem!important;
+  }
+  h1 {
+    font-size: 3rem!important;
+  }
   .topnav {
     position: fixed;
     margin: 0;
@@ -605,18 +610,26 @@ footer {
     margin-top: 100px;
     z-index: 0;
   }
+  .hero-text {
+    font-size: 1.2rem!important;
+  }
+
   .bground {
     background-color: transparent!important;
   }
   .content {
     position: absolute!important;
     max-width: inherit!important;
-    top: 8%!important;
+    top: 13%!important;
     margin: 0!important;
     border-bottom-left-radius: 0px!important;
     border-bottom-right-radius: 0px!important;
-    height: 92%;
+    height: 87%;
     overflow: auto;
+  }
+
+  .modal-body {
+    min-height: auto;
   }
 }
 
@@ -624,6 +637,7 @@ footer {
   body {
     overflow: auto;
     height: auto;
+    min-height: 100vh;
   }
   .toggle-nav {
     display: block;
