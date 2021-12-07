@@ -621,11 +621,11 @@ footer {
   .content {
     position: absolute!important;
     max-width: inherit!important;
-    top: 13%!important;
+    top: 10%!important;
     margin: 0!important;
     border-bottom-left-radius: 0px!important;
     border-bottom-right-radius: 0px!important;
-    height: 87%;
+    height: 90%;
     overflow: auto;
   }
 
